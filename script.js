@@ -49,7 +49,8 @@ numbers.forEach(num => num.addEventListener("click",()=>{
     numberFunc(num.value)
 }))
 
-numbers.forEach(num => num.addEventListener("touchend",()=>{
+numbers.forEach(num => num.addEventListener("touchend",(e)=>{
+    e.preventDefault();
     numberFunc(num.value)
 }))
 // --- FUNCTION FOR NUMBERS 1 THROUGH 9 ---
