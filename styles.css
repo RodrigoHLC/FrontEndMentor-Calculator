@@ -209,7 +209,7 @@
     background-color: var(--keyNumBKG);
     box-shadow: -3px 3px 0 0 var(--keyNumShadow);
 }
-.number:active, .operand:active, .number.active, .operand.active {
+.number.active, .operand.active {
     filter:brightness(1.3);
     box-shadow: none;
     /* inset -3px 3px 0 0 hsl(0, 0%, 23%), */
@@ -226,7 +226,7 @@ button:not(.number){
     color:white;
     box-shadow: -3px 3px 0 0 var(--keyResetShadow);
     }
-.clear:active, .reset:active, .clear.active, .reset.active {
+.clear.active, .reset.active {
     filter:brightness(1.2);
     transform:translate(-3px, 3px);
     box-shadow:  none;
@@ -236,7 +236,7 @@ button:not(.number){
     color:var(--keyEqualText);
     box-shadow: -3px 3px 0 0 var(--keyEqualShadow);
 }
-.equals:active, .equals.active {
+.equals.active {
     filter:brightness(1.1);
     transform:translate(-3px, 3px);
     box-shadow:  none;
