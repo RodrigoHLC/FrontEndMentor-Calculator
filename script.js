@@ -48,6 +48,8 @@ let operands = document.querySelectorAll(".operand:not(.subtraction, .period)");
 numbers.forEach(num => num.addEventListener("click",()=>{
     numberFunc(num.value)
 }))
+numbers.forEach(num => num.onclick=numberFunc(num.value))
+
 numbers.forEach(num => num.addEventListener("touchstart",()=>{
     numberFunc(num.value)
 }))
