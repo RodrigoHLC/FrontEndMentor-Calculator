@@ -49,7 +49,7 @@ numbers.forEach(num => num.addEventListener("click",()=>{
     numberFunc(num.value)
 }))
 
-numbers.forEach(num => num.addEventListener("touchend",(e)=>{
+numbers.forEach(num => num.addEventListener("touchstart",(e)=>{
     e.preventDefault();
     numberFunc(num.value)
 }))
