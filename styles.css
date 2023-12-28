@@ -1,0 +1,268 @@
+*, *::after, *::before {
+    box-sizing: border-box;
+    font-size: 32px;
+    font-family: League Spartan, sans-serif;
+    margin:0;
+    padding:0;
+    transition: 0.3s
+}
+/* --- C O L O R   S C H E M E S --- */
+/* --- C O L O R   S C H E M E S --- */
+:root {
+    --mainBKG:hsl(222, 26%, 31%);
+    --screenBKG:hsl(224, 36%, 15%);
+    --screenText:white;
+    --keyText:hsl(221, 14%, 31%);
+    --keypadBKG:hsl(223, 31%, 20%);
+    --keyNumBKG: hsl(30, 25%, 89%);
+    --keyNumShadow:hsl(28, 16%, 65%);
+    --keyResetBKG:hsl(225, 21%, 49%);
+    --keyResetShadow:hsl(224, 28%, 35%);
+    --keyEqualBKG:hsl(6, 63%, 50%);
+    --keyEqualShadow:hsl(6, 70%, 34%);
+    --keyEqualText:white;
+ }
+
+ .lightMode {
+    --mainBKG:hsl(0, 0%, 90%);
+    --screenBKG:hsl(0, 0%, 93%);
+    --screenText:hsl(60, 10%, 19%);
+    --keyText:hsl(60, 10%, 19%);
+    --keypadBKG:hsl(0, 5%, 81%);
+    --keyNumBKG:hsl(45, 7%, 89%);
+    --keyNumShadow:hsl(35, 11%, 61%);
+    --keyResetBKG:hsl(185, 42%, 37%);
+    --keyResetShadow:hsl(185, 58%, 25%);
+    --keyEqualBKG:hsl(25, 98%, 40%);
+    --keyEqualShadow:hsl(25, 99%, 27%);
+    --keyEqualText:hsl(0, 0%, 100%);
+ }
+
+.darkMode {
+    --mainBKG:hsl(268, 75%, 9%);
+    --screenBKG:hsl(268, 71%, 12%);
+    --screenText:hsl(52, 100%, 62%);
+    --keyText:hsl(52, 100%, 62%);
+    --keypadBKG:hsl(268, 71%, 12%);
+    --keyNumBKG:hsl(268, 47%, 21%) ;
+    --keyNumShadow:hsl(290, 70%, 36%);
+    --keyResetBKG:hsl(281, 89%, 26%);
+    --keyResetShadow:hsl(285, 91%, 52%);
+    --keyEqualBKG:hsl(176, 100%, 44%);
+    --keyEqualShadow:hsl(177, 92%, 70%);
+    --keyEqualText:hsl(198, 20%, 13%);
+ }
+/* --- W E B S I T E   L A Y O U T  --- */
+/* --- W E B S I T E   L A Y O U T  --- */
+.hero {
+    width:100%;
+    min-height:100vh;
+    height:100%;
+    background-color:var(--mainBKG);
+
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    /* padding:20px; */
+}
+/* --- C A L C U L A T O R   CONTAINER --- */
+/* --- C A L C U L A T O R   CONTAINER --- */
+.calculator {
+    /* border:2px solid white; */
+    /* min-width:280px; */
+    width:100%;
+    max-width:500px;
+    height:min-content;
+    /* width:100px; */
+
+    display:flex;
+    flex-direction: column;
+    padding:20px;
+    gap:20px;
+}
+
+/* --- T O P   S E C T I O N --- */
+/* --- T O P   S E C T I O N --- */
+
+.top {
+    display:flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    gap:20px;
+}
+.top  * {color:var(--screenText);}
+.calc {
+    font-size:24px;
+}
+.theme {
+    font-size:10px;
+    letter-spacing:1px;
+    margin-left:auto;
+    margin-bottom:3px;
+}
+.themeSelector{
+    min-width: 60px;
+}
+.themeNumbers {
+    margin-bottom:5px;
+    text-align: center;
+    display:flex;
+    justify-content: space-evenly;
+    align-items: center;
+    /* bordeR:1px solid red; */
+}
+.themeNumbers * {
+    font-size:10px;
+}
+.toggleSwitch {
+    background-color:var(--keypadBKG);
+    height:20px;
+    border-radius:20px;
+    position:relative;
+}
+.toggleSwitch:hover {
+    cursor: pointer;
+    filter: brightness(1.2);
+    transition:0.3s;
+}
+.toggleSwitch::before{
+    content:"";
+    display:block;
+    height:70%;
+    aspect-ratio:1/1;
+    background-color:var(--keyEqualBKG);
+    border-radius:50%;
+    /* transition:0.3s; */
+    position:absolute;
+    top:15%;
+    left:calc(20px * .15)
+}
+.lightMode .toggleSwitch::before {
+    left:21.5px;
+}
+.darkMode .toggleSwitch::before {
+    left:38.5px;
+}
+/* --- S C R E E N --- */
+/* --- S C R E E N --- */
+.screen {
+    border-radius:10px;
+    /* font-size:11.5vmin; */
+    font-size:50px;
+    padding:26px 25px;
+    text-align:right;
+    background-color: var(--screenBKG);
+    color:var(--screenText);
+    border:none;
+
+    text-wrap: nowrap;
+    overflow-x:auto;
+    overflow-y:hidden;
+    resize:none;
+    cursor:unset;
+    outline:none;
+}
+.screen::-webkit-scrollbar{
+    appearance:none;
+    height:10px;
+}
+.screen::-webkit-scrollbar-track{
+    margin: 0 20px;
+}
+.screen::-webkit-scrollbar-thumb {
+    background-color:var(--keyResetBKG);
+    border-radius:20px;
+}
+
+/* --- K E Y P A D --- */
+/* --- K E Y P A D --- */
+
+.keypad{
+    background-color: var(--keypadBKG);
+    border-radius:10px;
+
+    display:grid;
+    grid-template-rows: repeat(4, 1fr);
+    grid-template-columns: repeat(4, 1fr);
+    /* grid-template-columns: repeat(auto-fit, minmax(70px, 3fr)); */
+    /* grid-auto-columns: minmax(10px, auto); */
+    grid-auto-flow: dense;
+    grid-auto-columns: 4fr;
+    /* grid-auto-flow: row; */
+    gap:20px;
+    padding:20px;
+}
+
+.keypad * {
+    displaY:inline-block;
+    /* bordeR:1px solid yellow; */
+    border:none;
+    /* width:100%; */
+    /* min-width:80px; */
+    height:50px;
+    border-radius:7px;
+    color:var(--keyText);
+    cursor:pointer;
+}
+
+.number, .operand {
+    background-color: var(--keyNumBKG);
+    box-shadow: -3px 3px 0 0 var(--keyNumShadow);
+}
+.number:active, .operand:active, .number.active, .operand.active {
+    filter:brightness(1.3);
+    box-shadow: none;
+    /* inset -3px 3px 0 0 hsl(0, 0%, 23%), */
+    /* inset 3px -3px 0 0 var(--keypadBKG); */
+    transform:translate(-3px, 3px);
+    /* bordeR:none; */
+    /* outline:none */
+}
+button:not(.number){
+    font-size:20px;
+}
+.clear, .reset {
+    background-color: var(--keyResetBKG);
+    color:white;
+    box-shadow: -3px 3px 0 0 var(--keyResetShadow);
+    }
+.clear:active, .reset:active, .clear.active, .reset.active {
+    filter:brightness(1.2);
+    transform:translate(-3px, 3px);
+    box-shadow:  none;
+}
+.equals {
+    background-color: var(--keyEqualBKG);
+    color:var(--keyEqualText);
+    box-shadow: -3px 3px 0 0 var(--keyEqualShadow);
+}
+.equals:active, .equals.active {
+    filter:brightness(1.1);
+    transform:translate(-3px, 3px);
+    box-shadow:  none;
+}
+.reset, .equals {
+    grid-column: span 2 !important;
+}
+
+/* --- M O B I L E   S C R E E N S --- */
+/* --- M O B I L E   S C R E E N S --- */
+@media (max-width:430px) {
+    .top {
+        gap:10px;
+    }
+    .screen {
+        font-size:7vmin;
+    }
+    .keypad {
+        gap:10px;
+    }
+    .keypad > * {
+        min-width:35px;
+        min-height:35px;
+        font-size: 28px;
+    }
+    button:not(.number, .equals){
+        font-size:16px;
+    }
+}
