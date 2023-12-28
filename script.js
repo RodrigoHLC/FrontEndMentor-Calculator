@@ -48,6 +48,9 @@ let operands = document.querySelectorAll(".operand:not(.subtraction, .period)");
 numbers.forEach(num => num.addEventListener("click",()=>{
     numberFunc(num.value)
 }))
+numbers.forEach(num => num.addEventListener("touchstart",()=>{
+    numberFunc(num.value)
+}))
 // --- FUNCTION FOR NUMBERS 1 THROUGH 9 ---
 // --- FUNCTION FOR NUMBERS 1 THROUGH 9 ---
 const numberFunc = function (numKey){
