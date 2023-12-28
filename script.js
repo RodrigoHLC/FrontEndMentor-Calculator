@@ -50,7 +50,7 @@ numbers.forEach(num => num.addEventListener("click",()=>{
 }))
 numbers.forEach(num => num.onclick=numberFunc(num.value))
 
-numbers.forEach(num => num.addEventListener("touchstart",()=>{
+numbers.forEach(num => num.addEventListener("touchend",()=>{
     numberFunc(num.value)
 }))
 // --- FUNCTION FOR NUMBERS 1 THROUGH 9 ---
